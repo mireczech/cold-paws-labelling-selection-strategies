@@ -1,0 +1,4 @@
+start: 0
+reps: 1
+budget: [40]
+method: ['repulsive_csd', 'finetune_csd', 'greedy_csd', 'kmediods', 'kmediods_csd', 'greedy', 'finetune', 'repulsive', 'random', 'random_labelled', 'tsne_greedy_csd', 'tsne_finetune_csd', 'tsne_repulsive_csd', 'tsne_kmediods_csd', 'tsne_greedy', 'tsne_finetune', 'tsne_repulsive', 'tsne_kmediods']

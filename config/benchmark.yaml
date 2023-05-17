@@ -1,0 +1,4 @@
+start: 0
+reps: 10
+budget: [25, 50, 75, 100]
+method: ['greedy', 'finetune', 'repulsive'] 

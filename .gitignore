@@ -1,0 +1,9 @@
+
+.Rhistory
+__pycache__
+
+.Rproj.user
+
+*.pickle
+
+output

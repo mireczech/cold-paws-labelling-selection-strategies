@@ -1,0 +1,5 @@
+start: 0
+reps: 20
+budget: [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]
+method: ['repulsive_csd', 'finetune_csd', 'greedy_csd', 'kmediods', 'kmediods_csd', 'greedy', 'finetune', 'repulsive', 'random', 'random_labelled', 'tsne_greedy_csd', 'tsne_finetune_csd', 'tsne_repulsive_csd', 'tsne_kmediods_csd', 'tsne_greedy', 'tsne_finetune', 'tsne_repulsive', 'tsne_kmediods']
+
