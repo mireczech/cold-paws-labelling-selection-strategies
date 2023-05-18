@@ -1,5 +1,9 @@
+# Cold PAWS: Unsupervised class discovery and the cold-start problem
+## Repository to reproduce label selection results
 
-# Cold PAWS: repository to reproduce label selection results
+This is python code for the label selection strategies from the [paper](https://arxiv.org/abs/2305.10071). For the model fitting code see [this repo](https://github.com/emannix/cold-paws-simclr-and-paws-semi-supervised-learning).
+
+---
 
 First, download the sample data from [here](https://drive.google.com/file/d/1NzFKnz438yZ9sLrhUbtuJBzYxG8iLBTD/view?usp=share_link). Then, to initialise t-SNE clusters and the data files, run
 
@@ -32,4 +36,4 @@ To make t-SNE plots from the encoding files in data, run
 python vis_clustering.py
 ```
 
-The output folder contains some example outputs for reference
+The output folder contains some example outputs for reference which need to be downloaded seperately from the link above.
