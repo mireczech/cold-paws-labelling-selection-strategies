@@ -1,4 +1,4 @@
-# Cold PAWS: Unsupervised class discovery and the cold-start problem
+# Cold PAWS: Unsupervised class discovery and addressing the cold-start problem for semi-supervised learning
 ## Repository to reproduce label selection results
 
 This is python code for the label selection strategies from the [paper](https://arxiv.org/abs/2305.10071). For the model fitting code see [this repo](https://github.com/emannix/cold-paws-simclr-and-paws-semi-supervised-learning).
