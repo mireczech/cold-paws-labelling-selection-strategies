@@ -33,5 +33,5 @@ for budget in args.budget:
 			method = method, # greedy, compose
 			output_folder = 'output/results_'+newPath+'_'+method+'_'+str(budget)+'_'+str(base_seed),
 			nrep=nrep
-			)
+		)
 

@@ -7,3 +7,8 @@ __pycache__
 *.pickle
 
 output
+
+.venv/
+our_data/
+data/
+metadata/

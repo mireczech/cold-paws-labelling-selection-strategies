@@ -10,6 +10,7 @@ from .base_transform import TSNE_transform
 
 import torch
 import importlib
+import time
 
 class ExperimentImutable:
     def __init__(self, path='', path_labels=None, subset_index = None, test_path = '', test_labels=None, n=-1, dims=-1, drop_first=False, sep=',', 
@@ -40,13 +41,18 @@ class ExperimentImutable:
             self.test_data = None
             self.test_labels = None
 
+        self.transform_times = []
         print('transforming')
         if transform != 'None':
             # self.data_transformed_euclidean = []
             self.data_transformed_cosine = []
             for i in tqdm(range(transform_nrep)):
                 # self.data_transformed_euclidean.append(TSNE_transform(self.data, seed=seed+i, metric='euclidean'))
+
+                start = time.time()
                 self.data_transformed_cosine.append(TSNE_transform(self.data, seed=seed+i, metric='cosine'))
+                duration = time.time() - start
+                self.transform_times.append(duration)
 
     def plot_clusters(self, save_name='', nrep=2):
         from .base_transform import plot_transform

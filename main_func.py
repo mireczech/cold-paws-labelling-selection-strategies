@@ -14,6 +14,7 @@ from multiprocessing.shared_memory import SharedMemory
 from functools import partial
 import re
 import copy
+import json
 
 import importlib
 
@@ -93,7 +94,6 @@ def run_experiments_k_center(
                     nrep=1
                     ):
 
-    start = time.time()
     if not os.path.exists(output_folder):
         try:
             os.mkdir(output_folder)
@@ -170,9 +170,15 @@ def run_experiments_k_center(
     args = (cifar10_data, data_file, method, transform, args_method, output_folder, args_dict)
     
     for i in range(nrep):
+        start = time.time()
         d = write_exp(args, iteration=i, base_seed=seed)
+        duration = time.time() - start
 
-    end = time.time()
-    print(end - start)
+        cifar10_data.transform_times[i] += duration
 
+	# creating the metadata
+    metadata_dir = 'metadata'
+    dataset_model = re.search(r'data_processed/([^.]+)\.pickle', data_file).group(1)
+    with open(os.path.join(metadata_dir, f'{dataset_model}.csv'), 'w') as f:
+        json.dump({'transform_times': cifar10_data.transform_times}, f)
             
