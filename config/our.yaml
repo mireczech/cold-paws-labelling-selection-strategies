@@ -1,0 +1,4 @@
+start: 0
+reps: 1
+budget: [100]
+method: ['tsne_kmediods_csd']

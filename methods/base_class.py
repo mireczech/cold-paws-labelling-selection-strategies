@@ -1,6 +1,7 @@
 import numpy as np
 import numpy
 from pdb import set_trace as pb
+from tqdm import tqdm
 import pandas as pd
 
 from .distance_matrix import euclidean_distances_streamlined as pairwise_distances
@@ -41,17 +42,16 @@ class ExperimentImutable:
 
         print('transforming')
         if transform != 'None':
-            self.data_transformed_euclidean = []
+            # self.data_transformed_euclidean = []
             self.data_transformed_cosine = []
-            for i in range(transform_nrep):
-                print(i)
-                self.data_transformed_euclidean.append(TSNE_transform(self.data, seed=seed+i, metric='euclidean'))
+            for i in tqdm(range(transform_nrep)):
+                # self.data_transformed_euclidean.append(TSNE_transform(self.data, seed=seed+i, metric='euclidean'))
                 self.data_transformed_cosine.append(TSNE_transform(self.data, seed=seed+i, metric='cosine'))
 
     def plot_clusters(self, save_name='', nrep=2):
         from .base_transform import plot_transform
         for i in range(nrep): # len(self.data_transformed_euclidean)
-            plot_transform(self.data_transformed_euclidean[i], None, self.labels, 'data_clusters/' + save_name +'-euclidean'+str(i)+'.png')
+            # plot_transform(self.data_transformed_euclidean[i], None, self.labels, 'data_clusters/' + save_name +'-euclidean'+str(i)+'.png')
             plot_transform(self.data_transformed_cosine[i], None, self.labels, 'data_clusters/' + save_name +'-cosine'+str(i)+'.png')
 
     def initialise_embeddings(self, path,seed, n, drop_first, sep, path_labels = None):

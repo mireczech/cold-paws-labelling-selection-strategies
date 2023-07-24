@@ -9,7 +9,6 @@ from .base_class_stats import ExperimentStats
 from .base_class_kcentres import ExperimentStatsKCentres
 from .base_class_kmeans import ExperimentStatsKMeans
 from .base_transform import TSNE_transform
-import torchvision
 import os
 
 class ExperimentStatsGreedy(ExperimentStatsKCentres, ExperimentStatsKMeans):

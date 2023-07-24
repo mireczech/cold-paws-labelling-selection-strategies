@@ -14,7 +14,7 @@ def TSNE_transform(data, seed=0, iterations=1000, PCA=False, metric='euclidean')
     else:
         pca_result = data
 
-    tsne = TSNE(n_components=2, verbose=1, perplexity=40, n_iter=iterations, random_state=seed, metric=metric)
+    tsne = TSNE(n_components=2, verbose=0, perplexity=40, n_iter=iterations, random_state=seed, metric=metric, n_jobs=-1)
     tsne_results = tsne.fit_transform(pca_result)
 
     return tsne_results
